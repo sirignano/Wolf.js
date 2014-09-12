@@ -6,6 +6,9 @@ body {
 	width: 100%;
 	height: 100%;
 	text-align: justify;
+	font-family: Avantgarde, sans-serif;
+	font-weight: 100;
+	font-variant: normal;
 }
 
 h1 {
@@ -18,21 +21,34 @@ h1 {
 }
 
 img.wolfi {
+	opacity: 0.8;
 	display: block;
 	margin-left: auto;
 	margin-right: auto; 
-	height: 40%;
-	width: 40%;
-	border-radius: 20px;
+	height: 30%;
+	width: 30%;
+	border-radius: 10px;
+	border: solid 3px #323232;
+}
+img.wolfi:hover {
+	opacity: 1.0;
+	border: solid 3px #424242;
+	cursor:  pointer;
 }
 
 img.githublogo {
+	opacity: 0.7;
 	display: block;
 	margin-left: auto;
 	margin-right: auto; 
 	height: 10%;
 	width: 10%;
 	border-radius: 20px;
+}
+
+img.githublogo:hover {
+	opacity: 1.0;
+	cursor:  pointer;
 }
 
 #jeu {
@@ -53,6 +69,7 @@ img.githublogo {
 
 #jeux:hover {
 	color: #FF5B5B;
+	cursor:  pointer;
 }
 
 
@@ -76,6 +93,7 @@ img.githublogo {
 
 #information:hover {
 	color: #FF9900;
+	cursor:  pointer;
 }
 
 #information2 {
@@ -97,6 +115,7 @@ img.githublogo {
 
 #github:hover {
 	color: #3299BB;
+	cursor:  pointer;
 }
 
 #github2 {
@@ -108,11 +127,28 @@ img.githublogo {
 }
 
 a {
+	opacity: 0.8;
 	color: #3299BB;
 	text-shadow: 0px 1px 0px #424242;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #FF5B5B;
+	opacity: 1.0;
+	color: #4299BB;
+	cursor:  pointer;
+}
+
+#barrebas {
+	text-align: center;
+	vertical-align: center;
+	font-size: 11px;
+	color: #;
+    position: fixed;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+    background-color: #424242;
+    height: 15px;
+    width: 100%;
 }
