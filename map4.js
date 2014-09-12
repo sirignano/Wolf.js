@@ -52,3 +52,13 @@ function callmap()
   map.push([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
   return map;
 }
+
+function return_pos_x()
+{
+  return (22);
+}
+
+function return_pos_y()
+{
+  return (4);
+}
