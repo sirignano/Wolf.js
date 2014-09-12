@@ -53,12 +53,12 @@ function callmap()
   return map;
 }
 
-function return_pos_x()
+function return_start_pos_x()
 {
   return (22);
 }
 
-function return_pos_y()
+function return_start_pos_y()
 {
   return (4);
 }
@@ -66,4 +66,14 @@ function return_pos_y()
 function ft_redirect()
 {
   return 'document.location.href="./wolf4.html";';
+}
+
+function ft_get_end_x()
+{
+  return (30);
+}
+
+function ft_get_end_y()
+{
+  return (12);
 }

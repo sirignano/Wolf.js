@@ -52,14 +52,16 @@
   };
 
 /* player initialisation */
-  player = { x: return_pos_x(), y: return_pos_y() };
+  player = { x: return_start_pos_x(), y: return_start_pos_y() };
 
-  dir = {
+  dir =
+  {
     x: -1,
     y: 0
   };
 
-  plane = {
+  plane =
+  {
     x: 0,
     y: 0.66
   };
@@ -223,7 +225,8 @@
 
   key = {};
 
-  key_code = {
+  key_code =
+  {
     left: 37,
     up: 38,
     right: 39,
@@ -313,8 +316,10 @@
          	    ctx.textAlign = "center"; 
          	    ctx.textBaseline = 'top';
          	    ctx.fillStyle = 'rgba(127,0,0,0.5)';
-         	    ctx.fillText(text3, canvas.width - 600, 30);	
-            	if (player.x > 30 && player.y > 12)
+         	    ctx.fillText(text3, canvas.width - 600, 30);
+              posend_x = ft_get_end_x();
+              posend_y = ft_get_end_y();
+            	if (player.x > posend_x && player.x < posend_x + 1 && player.y > posend_y && player.y < posend_y + 1)
             	{
                   var text4 = "YOU WON"
                   ctx.font = "60pt Verdana";
