@@ -322,8 +322,8 @@
                   ctx.textBaseline = 'top';
                   ctx.fillStyle = 'rgba(127,0,0,0.5)';
                   ctx.fillText(text4, canvas.width / 2, canvas.height / 2);
-                  var redirect = 'document.location.href="./wolf1.html";';
-                  setTimeout(redirect,3000);
+                  var redirect = ft_redirect();
+                  setTimeout(redirect,2000);
               }
             }
 

@@ -62,3 +62,8 @@ function return_pos_y()
 {
 	return (4);
 }
+
+function ft_redirect()
+{
+	return 'document.location.href="./wolf1.html";';
+}
