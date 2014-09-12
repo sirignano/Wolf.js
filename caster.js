@@ -245,7 +245,71 @@
 
   window.addEventListener('keyup', (function(e) { return set_key(e, 0); }), true);
 
-  canvas.addEventListener('click', (function(e) { var x, y; console.log(x = e.pageX); return console.log(y = e.pageY); }), true);
+  canvas.addEventListener('click', (function(e)
+                                    {
+                                      var x, y;
+                                      x = e.pageX;
+                                      y = e.pageY;
+/*  trying to add shoot */
+                                            camera = { x: 2 * x / canvas.width - 1 };
+                                            ray = { x: player.x, y: player.y, dir: { x: dir.x + plane.x * camera.x, y: dir.y + plane.y * camera.x } };
+                                            cast = { x: Math.floor(ray.x), y: Math.floor(ray.y) };
+                                            delta = { x: Math.sqrt(1 + (ray.dir.y * ray.dir.y) / (ray.dir.x * ray.dir.x)), y: Math.sqrt(1 + (ray.dir.x * ray.dir.x) / (ray.dir.y * ray.dir.y)) };
+                                            run = { x: 0, y: 0 };
+                                            step = { x: 0, y: 0 };
+                                            hit = 0;
+                                            side = void 0;
+                                            step.x = ray.dir.x < 0 ? -1 : 1;
+                                            step.y = ray.dir.y < 0 ? -1 : 1;
+                                            if (ray.dir.x < 0)
+                                            {
+                                              run.x = (ray.x - cast.x) * delta.x;
+                                            }
+                                            else
+                                            {
+                                              run.x = (cast.x + 1.0 - ray.x) * delta.x;
+                                            }
+                                            if (ray.dir.y < 0)
+                                            {
+                                              run.y = (ray.y - cast.y) * delta.y;
+                                            }
+                                            else
+                                            {
+                                              run.y = (cast.y + 1.0 - ray.y) * delta.y;
+                                            }
+                                            while (hit === 0)
+                                            {
+                                              if (run.x < run.y)
+                                              {
+                                                run.x += delta.x;
+                                                cast.x += step.x;
+                                                side = 0;
+                                              }
+                                              else
+                                              {
+                                                run.y += delta.y;
+                                                cast.y += step.y;
+                                                side = 1;
+                                              }
+                                              if (map[cast.x][cast.y] > 0)
+                                              {
+                                                hit = 1;
+                                              }
+                                            }
+                                            distance = side === 0 ? Math.abs((cast.x - ray.x + (1 - step.x) / 2) / ray.dir.x) : Math.abs((cast.y - ray.y + (1 - step.y) / 2) / ray.dir.y);
+/* retrieving Y */
+                                            height = canvas.height / distance;
+                                            first_y = Math.round(canvas.height / 2 - height / 2);
+                                            if (y > first_y && y < first_y + height && map[cast.x][cast.y] > 1)
+                                                map[cast.x][cast.y] = 0;
+                                            draw();
+
+
+/* en of shoot */
+
+                                      return ;
+                                    }
+                                    ), true);
 
   resizeCanvas = function()
   {
@@ -286,6 +350,7 @@
             {
               move_toward({ x: -dir.x, y: -dir.y });
             }
+
             if (key.up)
             {
               move_toward(dir);
