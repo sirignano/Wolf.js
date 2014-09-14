@@ -50,8 +50,64 @@
 		<div id="information" onclick="ft_info()">Information</div>
 
 		<div id="information2" style="display:none;">
-		Quid difficillime invenias invenias invenias Haec Ad difficillime publica plerisque versantur qui suo Quamquam qui plerisque inventu istum ubi honorem difficillime difficillime videntur ubi quam plerisque qui publica plerisque reperiuntur honoribus qui iis omittam Haec Quid difficillime versantur ut enim Quamquam quas anteponat amici societates est reperiuntur quam in invenias amicitiae reque honorem calamitatum Haec amicitiae qui honorem versantur difficillime Quid suo reque graves verae calamitatum in difficillime recte quam qui Quamquam amici est invenias qui difficiles amici Ad non Ad quas amicitiae in Quid ut honoribus inventu Quamquam suo Quamquam amici descendant qui amicitiae descendant inventu iis recte facile.</div>
-
+			Bonjour, <br/>
+			Je m'apelle Lucca, étudiant a 42, en stage actuellement et en voie de devenir un porc epic déshydraté. <br/>
+			<br/>
+			A 42, comme a Epitech, un projet d'Infographie, a faire en C, consiste a utiliser la technique du raycasting, <br/>
+			pour tenter de produire un mini jeux, quelque soit le gameplay, dont le décors ressemble a Wolfeinstein 3d. <br/>
+			<div>
+				<img src="http://static.giantbomb.com/uploads/original/8/81005/2211993-wolf3d_490a.png"></img>
+				<img src="img/wolf.png"></img>
+			</div><br/>
+			A la fin de la premiere année, les étudiants ont un niveau suffisament interessant pour faire ce genre d'exercice les yeux fermé.<br/>
+			... en C.<br/>
+			L'idée de progresser en javascript pour developper ma vision de ce language a la fois, puissant, dynamique (, et degueulasse?),<br/>
+			a vite traversé mon cerveau.<br/>
+			J'ai donc pris sur mon temps libre, regardé le travail de mlalisse, généré en coffeeScript, qui m'ont permis de deviner les bases du language.<br/>
+			La syntaxe, le scope, comment poser un pixel a une position précise, comment capter un événement souris.<br/>
+			C'étais bien plus qu'il ne m'en fallais.<br/>
+			<br/>
+			Les touches :<br/>
+			<br/>
+			- haut bas droite et gauche, je cherche a trouver une solution evidente pour android<br/>
+			- click droit de la sourie pour tirer, sur des blocs pour l'instant, sur des ennemis plus tard.<br/>
+			<br/>
+			Comment créer son niveau :<br/>
+			<br/>
+			- un exemple de map est disponible sur map0.js inclu par le fichier wolf.html<br/>
+			- evidement pour l'instant il serais de bon ton de toujours entouré la map de mur indestructible ( 1 ), pour eviter des bugs d'affichage évident.<br/>
+			- return_start_pos_x() et return_start_pos_y() retourne evidemment x,y pour la position de depart<br/>
+			- ft_get_end_x() et ft_get_end_y() retourne evidemment x,y pour la case de sortie.<br/>
+			- ft_redirect() retourne le prochain_niveau.html, qui lui même (en suivant l'exemple de wolfX.html doit inclure le prochain_niveau.js)<br/>
+			- evidement le projet d'éditeur de niveau (qui sera en faite un createur de séries de niveaux dans un premier temps, puis un editeur ensuite)<br/>
+			permettra une creation beaucoup plus simple du niveau, autorisera la creation de case piege, ou vous pourrez directement coder les effets sur le joueurs.<br/>
+			<br/>
+			Ce Que j'ai fait dernierement :<br/>
+			<br/>
+			- ajout de niveau et fichier de configuration pour la map.<br/>
+			- ajout d'une sortie et d'une redirection vers le niveau suivant.<br/>
+			- plusieur type de murs peuvent etre créer.<br/>
+			- Certains murs peuvent etre détruit, grace a une fonction de tir, déclenché par le click<br/>
+			- mouvement smooth et adapté a un fps/jeux d'arcade.<br/>
+			<br/>
+			Ce qu'il reste a faire :<br/>
+			<br/>
+			- sans threejs, si possible, ajouter une sandbox et une skybox.<br/>
+			- ajouter une animation de tir (joueur, a la premiere personne)<br/>
+			- ajouter l'ombre du joueur.<br/>
+			- ajouter des éléments de décor<br/>
+			- ajouter des sprites ennemies.<br/>
+			- créer une IA.<br/>
+			- définir une regle basé sur la fuite, ou la victoire contre l'IA<br/>
+			- ajouter le saut et l'accroupissement.<br/>
+			- changer les régles de tirs avec ces effets.<br/>
+			- ajouter 'wasd'.<br/>
+			- créer un editeur de map en php/ruby ou python (i dunno yet)<br/>
+			- transformer le jeux en librairie pour utilisation différentes.<br/>
+			<br/>
+			<br/>
+			Merci a tous :)<br/>
+		</div>
 		<div id="github" onclick="ft_close_git()">GitHub</div>
 
 		<div id="github2" style="">
