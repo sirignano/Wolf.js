@@ -33,17 +33,22 @@
   };
 
 /* loading image for textures */
+/* for 1 */
   img = new Image();
-  img.src = '../img/mur3.jpg';
+  img.src = '../img/mur7.jpg';
   img.onload = function() {
     return draw();
   };
 
+/* 2 */
+
   img2 = new Image();
-  img2.src = '../img/mur.jpg';
+  img2.src = '../img/murold.jpg';
   img2.onload = function() {
     return draw();
   };
+
+/* 3 */
 
   img3 = new Image();
   img3.src = '../img/mur2.jpg';
