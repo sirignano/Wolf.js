@@ -34,19 +34,19 @@
 
 /* loading image for textures */
   img = new Image();
-  img.src = 'mur.jpg';
+  img.src = '../img/mur3.jpg';
   img.onload = function() {
     return draw();
   };
 
   img2 = new Image();
-  img2.src = 'mur2.jpg';
+  img2.src = '../img/mur.jpg';
   img2.onload = function() {
     return draw();
   };
 
   img3 = new Image();
-  img3.src = 'mur3.jpg';
+  img3.src = '../img/mur2.jpg';
   img3.onload = function() {
     return draw();
   };
@@ -159,6 +159,67 @@
       }
       wall.x -= Math.floor(wall.x);
 
+/* floor 
+
+//FLOOR CASTING
+      var floorXWall, floorYWall; //x, y position of the floor texel at the bottom of the wall
+
+      //4 different wall directions possible
+      if (side == 0 && ray.dir.x > 0)
+      {
+        floorXWall = cast.x;
+        floorYWall = cast.y + wall.x;
+      }
+      else if (side == 0 && ray.dir.x < 0)
+      {
+        floorXWall = cast.x + 1.0;
+        floorYWall = cast.y + wall.x;
+      }
+      else if (side == 1 && ray.dir.y > 0)
+      {
+        floorXWall = cast.x + wall.x;
+        floorYWall = cast.y;
+      }
+      else
+      {
+        floorXWall = cast.x + wall.x;
+        floorYWall = cast.y + 1.0;
+      } 
+      
+      var distWall, distPlayer, currentDist;  
+
+      distWall = distance;
+      distPlayer = 0.0;
+
+      //draw the floor from drawEnd to the bottom of the screen
+      var y = first_y + height;
+      var h = first_y + height;
+        imgfloor = new Image();
+        imgfloor.src = 'mur.jpg';
+        imgfloor.onload = function() { return draw(); };
+      while (y < canvas.height)
+      {
+        currentDist = h / (2.0 * y - h); //you could make a small lookup table for this instead
+
+        var weight = (currentDist - distPlayer) / (distWall - distPlayer);
+         
+        var currentFloorX = weight * floorXWall + (1.0 - weight) * player.x;
+        var currentFloorY = weight * floorYWall + (1.0 - weight) * player.y;
+        
+        var floorTexX, floorTexY;
+        floorTexX = Math.ceil(currentFloorX * imgfloor.width) % imgfloor.width;
+        floorTexY = Math.ceil(currentFloorY * imgfloor.height) % imgfloor.height;
+        
+        //floor
+ //       buffer[x][y] = (texture[3][texWidth * floorTexY + floorTexX] >> 1) & 8355711;
+        ctx.drawImage(imgfloor, floorTexX, 0, 1, floorTexY, x, h, 1, canvas.height - h);
+        //ceiling (symmetrical!)
+  //      buffer[x][h - y] = texture[6][texWidth * floorTexY + floorTexX];
+        y++;
+      }
+
+ end of floor */
+
       if (map[cast.x][cast.y] === 1)
       {
 	      tex = { x: Math.round(wall.x * img.width) % img.width };
@@ -215,7 +276,7 @@
       {
         ctx.drawImage(img3, tex.x, 0, 1, img3.height, x, first_y, 1, height);
       }
- 
+
      _results.push(x++);
     }
     return _results;
@@ -393,7 +454,7 @@
                   ctx.fillStyle = 'rgba(127,0,0,0.5)';
                   ctx.fillText(text4, canvas.width / 2, canvas.height / 2);
                   var redirect = ft_redirect();
-                  setTimeout(redirect,2000);
+                  setTimeout(redirect,1000);
               }
             }
 

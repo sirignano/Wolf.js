@@ -65,7 +65,7 @@ function return_start_pos_y()
 
 function ft_redirect()
 {
-  return 'document.location.href="./index.html";';
+  return 'document.location.href="../index.html";';
 }
 
 function ft_get_end_x()
